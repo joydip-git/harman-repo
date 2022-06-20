@@ -1,1 +1,247 @@
+plan:
 1. OOP and SOLID principle
+2. HTML, CSS
+3, 4, 5: JS
+6: TS
+7-16: React JS
+17,18,19: Next JS
+20: Agile
+
+s/w: VS Code, Node JS
+
+small assignment
+problem statement/case study
+
+OOP:
+wrt object
+object: real time entity, having characterestics and functionalities
+OOP features: polymorphism, inheritance, abstraction, encapsulation (inside capsule)
+
+pi = 3.14
+
+Math.PI
+
+S: Single Responsibilty
+O: Open closed 
+L: Liskov 
+I: interface segregation
+D: dependency injection
+
+has-a
+
+class employee
+{
+	protected string name;
+	protected string departmentName;
+	protected string role;
+
+	public employee(){}
+	public employee(string empName, string deptName, string roleName)
+	{
+		name= empName;
+		departmentName = deptName;
+		role = roleName;
+	}
+
+	public string getName(){ return name;}
+	public void setName(string value){ name = value;}
+
+	public string getDepartmentName(){ return departmentName;}
+	public void setDepartmentName(string value){ departmentName=value;}
+
+	public string getRole(){ return role;}
+	public string setRole(string value){ role = value;}
+}
+employee e = new employee(val1, val2, val3);
+class hr extends employee
+{	
+	bool senior;
+
+	public hr(){}
+	public hr(string empName, string deptName, string roleName, bool isSenior)//:base(empName,deptName,roleName)
+	{
+		super(empName,deptName,roleName);
+		senior = isSenior;
+	}
+
+	public calculateSalary(){  }
+}
+
+hr h = new hr("joydip","hr","HR",true);
+hr.getName();
+
+class developer extends employee
+{	
+	private string technology;
+	public calculateSalary(){}
+}
+class manager extends employee
+{	
+	private int numberOfCurrentProjects;
+	public calculateSalary(){}
+}
+class trainee extends employee
+{	
+	private int level;
+	private float marks;
+	private int numberOfAssignmentsSubmitted;
+	private int status;
+	public calculateSalary(){}
+}
+class training
+{
+	
+	string trainingName;
+	string corodinator;
+	int numberOfParticipants;
+	private string clientName;
+	private datetime startDate;	
+	private datetime endDate;
+	private float commercialAmount;
+	private float totalInvoiceAmount;
+	private int numberOfDays;
+	//public const int X = 10;
+
+	//has-a relationship
+	trainee trainees[];
+        
+	//deafult ctor
+	 public training()
+	 {
+	 }
+
+	//parameterized ctor
+	 public training(string trngName, string cor, int traineeNum, string client, datetime start, datetime end, float com)
+	{
+		trainingName=trngName;
+		.........................
+	}
+	 public string getClientName()
+	 {
+		return clientName;
+	 }
+	 public int calculateNumberOfDays()
+	 {
+		//deduct start date from end date and store the value in numberOfDays
+	 }    	 
+	 public void calculateTotalInvoiceAmount()
+	 {		
+		calculateNumberOfDays();
+		//multiply the numberOfDays by commercialAmount and store the value in totalInvoiceAmount
+	 }
+}
+
+
+
+training enterdata(){
+	cin>>
+	cout>>
+
+	system.out.println("enter start date:");	
+	system.out.println("enter end date:");
+	system.out.println("enter commercial:");
+	system.out.println("enter client name:");
+	system.out.println("enter subject:");
+
+	String trngName = "";
+	String clientName="";
+	float commercial = 1000;
+	datetime start=;
+	datettime end=;
+	
+	//deduct start date from end date and store the value in another variable totalDays
+ 	int days = end-start
+	float total = days*commerical;
+
+	training trng = new training(val1, val2, .............);
+	//trng.trainingName = trngName;
+	//trng.clientName=clientName;
+	......
+	//trng.totalInvoiceAmount=total;
+
+	//trng.calculateNumberOfDays();
+	trng.calculateTotalInvoiceAmount();
+
+       //return this object address
+	return trng;
+}
+main(){
+	int x = 10;
+	int y = 20;
+	int res = x+y;
+
+	trng.getClientName();
+
+	//create an array
+	for(int i=0;i<3;i++){
+	 	training t = enterdata();
+		//store this object in an array/list
+	}
+	
+}
+
+
+trainingname clientname	startdate  enddate     commercial  total amount
+FRONT	 	Harman	20-06-2022 15-07-2022   1000	   TBC
+Java		Siemens	....		....	1500	   TBC	
+
+list of subjects:
+C#
+.NET Framework
+Java
+JSP
+Servlet
+EJB
+Spring
+Hibernet
+JS
+TS
+HTML
+
+func(){
+	int x = 10;
+}
+ashsahcjahsc
+
+
+local variables to the function
+class object data (global variable w.r.t. functions inside the class)
+
+inheritance: aquiring the characterestics (properties) and functionalities from one class (parent) to another class (child)
+
+single-level/simple: A<--B
+multilevel: A<--B<--C
+mutiple: C -->A, B, ..... (C++)
+
+
+A. compile-time/static polymorphism:
+1. function and constructor overloading:
+functions with the same name should have following differences in the parameters:
+Note: return type is not considered as factor for differentiation between function
+a. number of parameters
+b. data type of parameters
+c. position of the parameters
+
+class calculation
+{
+	add(int x, int y){}
+	add(int x, int y, int z){}
+	add(int x, int y, float z){}
+	add(int x, float y, int z){}
+}
+
+add(12,13.45,14)
+
+2. operator overloading:
+12+13=>25
+"anil"+"kumble"=>"anil kumble"
+
+B. dynamic polymorphism:
+
+
+
+
+
+
+
+
