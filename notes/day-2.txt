@@ -1,0 +1,160 @@
+dynamic polymorphism
+----------------------------------
+
+class A
+{
+	protected int x;
+	public A(){}
+	public A(int val){x=val;}
+	public string print()
+	{
+		//print the value of x
+		//system.out.println(x);
+		return x;
+	}
+}
+class D extends A {}
+class B extends A
+{
+	int y;
+	public B(){}
+	public B(int val1, int val2)
+	{
+		super(val1);
+		y = val2;
+	}
+	@override
+	public string print()
+	{
+		//print the value of x and y
+		return super.print()+""+y;
+		//system.out.println(x+" "+y);
+	}
+} 
+class C extends A
+{
+	int z;
+	public C(){}
+	public C(int val1, int val2)
+	{
+		super(val1);
+		z = val2;
+	}
+	@override
+	public string print()
+	{
+		//print the value of x and z
+		//system.out.println(x+" "+z);
+		return super.print()+""+z;
+	}
+} 
+class app{
+
+	main(){
+	//upcasting
+		A obj = new B();
+		obj.print();
+		int a = 10;
+
+		calculation calc = new calculation();
+		calc.add(12,13);
+	}
+}
+
+class calculation
+{
+	add(int x, int y){}
+	add(int x, int y, int z){}
+	add(int x, int y, float z){}
+	add(int x, float y, int z){}
+}
+
+
+interface
+solid principle
+
+
+		animal -> makeSound()
+-----------------------------------------------------------
+cat		dog		bird	.....
+makeSound()	makeSound()	makeSound()
+{}		{}		{}
+
+abstract class: a class containing at least a single abstract method is an abstract class
+file
+database
+
+	[pure abstract class] logger => void log();
+--------------------------------------------------------------
+filelogger => @override void log() {}
+dblogger   => @override void log() {}
+
+class person 
+{
+	string name;	
+	public person(){}
+	public person(string n){name=n;}
+	public bool isOutstanding();
+	public string print(){ return name;}
+}
+person p = new person();
+//p.isOutstanding();
+class student extends person
+{
+	float marks;
+	public student(){}
+	public student(string n, float m){ super(n); marks=m;}
+        public bool isOutstanding() { if(marks>85) return true; else return false;}	
+	public string print()
+	{
+		return super.print()+""+marks;
+	}
+}
+class professor	extends person
+{
+	int booksPublished;
+	public bool isOutstanding() { if(booksPublished>5) return true; else return false;}
+	public string print(){ return super.print()+""+booksPublished;}
+}
+
+dynamic polymorphism
+	a. base method is NOT abstract, it is not mandatory for child to re-implement
+	b. base method is abstract, its is now MANDATORY for child to re-implement
+
+abstract class=>
+	is to be used as a template for other classes with common data and functionalities, where some of the functionalities are abstract because the implementation completely relies on the child/derived class
+	abstract class can contain non-abstract members also
+	abstract class idea forces child classes to mandatroily implement some of the required methods
+side-effect:
+	abstract class's object can't be created
+
+pure abstract class: an abstract class, where everything is abstract (no non-abstract member can be there) - interface
+	interface is collection of just abstrat members 
+	multiple interfaces can be implemented in a single class
+	interface provides loose coupling
+	interface gateway to the class
+	interface acts as a contract for the classes who implement it
+side-effect: 
+	you can't create instance of an interface
+
+			shape	=> float calculateArea();
+circle			rectangle		triangle
+--------------------------------------------------------------------------------
+radius			length, width		base, height
+float calculateArea()	float calculateArea()   float calculateArea()			
+
+C => A, B, D, E
+
+B => A
+
+interface dataOperations
+{
+	void getData();
+	void addData();
+}
+class DataAccess implements dataOperations
+{
+	public void getData(){}
+	public void addData(){}
+	.......................	
+}
