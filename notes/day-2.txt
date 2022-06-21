@@ -158,3 +158,82 @@ class DataAccess implements dataOperations
 	public void addData(){}
 	.......................	
 }
+
+class areaCalculator{
+
+	/*
+	public float calculate(circle c){
+		return c.calculateCircleArea();
+	}
+	public float calculate(triangle t){
+		return t.calculateTriangleArea();
+	}
+	public float calculate(square s){
+		return s.calculateTriangleArea();
+	}
+	public float calculate(rectangle r){
+		return r.calculateTriangleArea();
+	}
+	*/
+	public float calculate(shape s){
+		return s.calculateCircleArea();
+	}
+}
+
+interface areaConsolePrinter
+{
+	void printAreaInConsole();
+}
+interface areaTextPrinter
+{	
+	void printAreaInText(float area);
+}
+interface areaJsonPrinter
+{
+	void printAreaInJson(float area);
+}
+interface areaHTMLPrinter
+{
+	void printAreaInHTML(float area);
+}
+class shapeConsolePrinter implements areaConsolePrinter
+{
+}
+
+class shapeTextPrinter implements areaJsonPrinter
+{
+	public void printAreaInText(float area){}
+}
+class shapeHTMLPrinter implements areaHTMLPrinter
+{
+	public void printAreaInHTML(float area){}
+}
+
+class shapeJsonPrinter extends shapeConsolePrinter implements areaTextPrinter
+{
+	public void printAreaInJson(float area){}
+}
+main(){
+	circle c = new circle();
+	triangle t = new triangle();		
+	square s = new square();
+	rectangle r = new rectangle();
+	areaCalculator ac = new areaCalculator();
+	float cArea = ac.calculate(c);
+	float tArea = 	ac.calculate(t);
+	float sArea = 	ac.calculate(s);
+	float rArea = 	ac.calculate(r);
+	areaPrinter ap = new areaPrinter();
+	ap.printAreaInText(cArea);
+	//ap.printAreaInJson(tArea);
+	//ap.printAreaInHTML(sArea);
+}
+shape => float calculateArea();
+circle->shape =>float calculateArea(){}
+triangle->shape=>float calculateArea(){}
+square->shape=>float calculateArea(){}
+rectangle->shape=>float calculateArea(){}
+
+S:single responsibility ("S"olid)
+O:open-closed: open for extension, closed for change (s"O"lid)
+I:interface segregation principle (sol"I"d)
