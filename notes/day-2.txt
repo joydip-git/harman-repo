@@ -214,12 +214,22 @@ class shapeJsonPrinter extends shapeConsolePrinter implements areaTextPrinter
 	public void printAreaInJson(float area){}
 }
 main(){
-	circle c = new circle();
-	triangle t = new triangle();		
-	square s = new square();
-	rectangle r = new rectangle();
+	shape c = null;
+	c = new circle();
+
+	shape t = null;
+	t = new triangle();		
+
+	shape s = null;
+	s = new square();
+
+	shape r = null;
+	r = new rectangle();
+
+	int x = 10;
+
 	areaCalculator ac = new areaCalculator();
-	float cArea = ac.calculate(c);
+	float cArea = 	ac.calculate(c);
 	float tArea = 	ac.calculate(t);
 	float sArea = 	ac.calculate(s);
 	float rArea = 	ac.calculate(r);
@@ -236,4 +246,224 @@ rectangle->shape=>float calculateArea(){}
 
 S:single responsibility ("S"olid)
 O:open-closed: open for extension, closed for change (s"O"lid)
+L: Liskov Substituion principle=>every sub/child/derived class should be substitutable for their base or parent class
 I:interface segregation principle (sol"I"d)
+D: dependency inversion principle=> entities /objects should depend on abstractions, not on concretions
+
+
+interface Shape
+{
+	float calculateArea();	
+}
+class Circle implements Shape
+{
+	float _radius;
+	public Circle(){}
+	public Circle(float radius)
+	{
+		_radius = radius;
+	}
+	public float calculateArea()
+	{
+		return _radius*_radius*3.14;
+	}	
+}
+
+class Square implements Shape
+{
+	float _length;
+	public Square(){}
+	public Square(float length)
+	{
+		_length = length;
+	}
+	public float calculateArea()
+	{
+		return _length*_length;
+	}	
+}
+class Rectangle implements Shape
+{
+	float _length;
+	float _width;
+
+	public rectangle(){}
+	public rectangle(float l, float w){ _length = l; _width = w;}		
+	public float calculateArea()
+	{
+		return _length*_width;
+	}	
+}
+class AreaCalculator
+{
+	private Shape _shapes[];
+	private float area[];
+	public AreaCalculator(){}
+	public AreaCalculator(Shape shapes[])
+	{
+		_shapes = shapes;
+	}
+
+	public void calculate()
+	{
+		for(int i =0;i<_shapes.getLength();i++)
+		{
+			Shape s = _shapes[i];
+			_area[i]= s.calculateArea();
+			/*
+			if(s is of type Square)
+			{
+				area[i]=s._length*s._length;				
+			}
+			if(s is of type Circle)
+			{
+				area[i]=s._radius*s._radius*3.14;				
+			}		
+			if(s is of type Rectangle)
+			{
+				area[i]=s._radius*s._radius*3.14;				
+			}*/
+		}
+	}	
+}
+class volumeCalculator extends AreaCalculator
+{
+	public volumeCalculator(){}
+	public volumeCalculator(Shape shapes[]){ super(shapes);}
+	@override
+	public void calculate()
+	{
+		//logic to calculate volume of every shape
+	}
+}
+class areaPrinter
+{
+	AreaCalculator _ac;
+	public areaPrinter(AreaCalculator ac)
+	{
+		_ac = ac;
+		_ac.calculate();
+	}
+	public void printAreaInText()
+	{
+		for(int i =0;i<_ac._area.getLength();i++)	
+		{
+			print the areas of different shapes
+			system.out.println(_ac._area[i]);
+		}
+	}
+	public void printAreaInJson()
+	{
+		for(int i =0;i<_ac._area.getLength();i++)	
+		{
+			print the areas of different shapes
+			system.out.println(json_encode(_ac._area[i]));
+		}
+	}
+	public void printAreaInHTML()
+	{
+		for(int i =0;i<_ac._area.getLength();i++)	
+		{
+			print the areas of different shapes
+			system.out.println(_ac._area[i]);
+		}
+	}
+}
+main(){
+	Circle c = new Circle(12);
+	Square s = new Square(23);
+	Rectangle r = new Rectangle(12,13);
+	//create object of AC and pass an array of type Shape
+	Shape shapes[] = new Shape[]{c,s,r};
+
+	AreaCalculator ac = new AreaCalculator(shapes);
+	volumeCalculator vc = new volumeCalculator(shapes);
+
+	areaPrinter printer = new areaPrinter(ac);
+	printer.printArea();
+	areaPrinter volumePrinter = new areaPrinter(vc);
+	printer.printArea();
+}
+
+1. change in the name of the entity
+2. changed the architecture
+3. object not created
+
+interface DataAccess
+{
+	public string getData();
+	public bool addData(string data);
+	................................
+}
+//depndency factor
+class MySqlDataAccess implements DataAccess
+{
+	public SqlDataAccess()
+	{
+	}
+	public string getData(){ //code}
+	public bool addData(string data){ //code}	
+	................................
+}
+//depndency factor
+class OracleDataAccess implements DataAccess
+{
+	public string getData(){ //code}
+	public bool addData(string data){ //code}	
+	................................
+}
+class SqlServerDataAccess implements DataAccess
+{
+	public string getData(){ //code}
+	public bool addData(string data){ //code}	
+	................................
+}
+//dependent class
+class UserInterface
+{
+	DataAccess dbAccess;
+	public UserInterface(DataAcces _dataAccess)
+	{
+		dbAccess = _dataAccess;
+	}		
+	public void ShowData()
+	{
+		string data = dbAccess.getData();
+		system.out.println(data);
+	}	
+	public void InsertData()
+	{
+		bool res = dbAccess.addData("joydip");
+		print res
+	}
+}
+main(){
+//print a menu to the user
+//1. Oracle
+//2. My Sql
+//3. sql server
+
+//ask for choice
+//if user enters 1, create instance of OracleDataAccess
+//if user enters 2, create instance of MySqlDataAccess
+//if user enters 2, create instance of SqlServerDataAccess
+int choice=2;
+DataAccess da;
+switch(choice)
+{
+	case 1:
+		da = new OracleDataAccess();		
+		break;
+
+	case 2:
+		da = new MySqlDataAccess();
+		break;
+
+	case 3:
+		da = new SqlServerDataAccess();
+		break;
+}
+
+UserInterface ui = new UserInterface(da);
+ui.ShowData();
+}
