@@ -75,4 +75,31 @@ selectors while styling (using outline/oufile style)
 	id selector
 	class selector
 
+HTML provides built-in tags
+	some of them are known as control tags
+	some control tags are known input tags or form elements - textbox, select, button, etc...
+
+JavaScript: 
+	it is a scripting language/programming language
+	it is a loosely typed language
+	it is dynamic programming language
+	does not provide compile-time type checking
+	it has data types, control flow statements, operators, OOP idea (prototypes)
+
+TypeScript:
+	provides you the facility of strict typing, it is a strongly/implcitly typed language
+	provides compile-time type checking
+
+
+
+event-driven programming model
+-------------------------------------------
+control=>  attribute (onEventName) => function()
+control => (event) => call some method/function
+
+callback mechanism
+
+control must be linked with a method w.r.t. an event
+
+JS data types: number, bool, string, object, function, undefined
 
