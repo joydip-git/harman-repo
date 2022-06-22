@@ -1,0 +1,29 @@
+h2,
+h3 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lightgreen;
+}
+
+/*
+        h3 {
+            color: blue;
+        }*/
+#refHeader,
+#historyHeader {
+  color: blue;
+}
+
+.myStyle {
+  font-family: "Consolas";
+  font-size: large;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+}
+
+.colorStyle {
+  font-size: medium;
+  color: burlywood;
+}

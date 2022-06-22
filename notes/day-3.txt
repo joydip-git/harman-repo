@@ -1,0 +1,78 @@
+1. HTML, CSS, JS
+
+interface A
+{
+	public void Foo();
+}
+class X implements A
+{
+	public C(){ //code}
+	public void Foo(){//code}
+}
+class Y implements A
+{
+	public D(){//code}
+	public void Foo(){//code}
+}
+class B
+{
+	A obj;
+	public B()
+	{
+		
+	}
+	public B(A aObj)
+	{
+		obj = aObj;
+	}
+	public void CallFoo()
+	{
+		obj.Foo();
+	}
+}
+
+main(){
+	Y objD = new Y();
+	B obj1 = new B(objD);
+}
+
+
+
+
+class A { public void foo(){}}
+class B extends A{ @overrode public void foo(){ super.Foo();}}
+class C extends A{ public void foo(){}}
+class D extends A{ public void foo(){}}
+
+main(){
+	A obj = new B();
+	obj.Foo();
+}
+
+class calculation
+{
+	add(int x, int y){}
+	add(int x, int y, int z){}
+	add(int x, int y, float z){}
+	add(int x, float y, int z){}
+}
+
+calculation c = new ....();
+c.add(12,13);
+
+
+HTML: design
+CSS:  styling
+JS:   code
+
+CSS:
+a. inline styling
+b. outline styling (in the same file)
+c. outline-outfile styling (in separate CSS file)
+
+selectors while styling (using outline/oufile style)
+	name selector
+	id selector
+	class selector
+
+
