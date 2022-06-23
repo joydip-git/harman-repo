@@ -1,0 +1,7 @@
+1. create a constructor function to create some employee objects
+2. every employee object will have following properties:
+	a. value properties: name, id, basicpayment, dapayment, hrapayment
+	b. functional properties: calculteSalary
+3. now create at least two employee objects
+4. store them in an array
+5. iterate through the array and display the name and total salary of those employees

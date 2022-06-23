@@ -41,6 +41,7 @@ console.log(joydipPerson.print())
 //     this.personId = id;
 //     this.personName = name;
 //     this.personSalary = salary;
+//     this.print= function(){ return this.personName + ' ' + this.personSalary;}
 // }
 // person.prototype.print = function () {
 //     var info = this.personName + ' ' + this.personSalary;
