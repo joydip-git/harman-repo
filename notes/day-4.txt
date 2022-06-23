@@ -1,0 +1,35 @@
+HTML, CSS, JavaScript
+
+Node JS: 
+server side framework
+
+Ryan Dahl => V8 engine (C++, open source)
+
+Node JS <= JS file(s)
+I/O operations, darabase operations etc. using JS code
+
+require('fs')
+
+readFile
+writeFile etc.
+
+#include<stdio.h> => printf, scanf
+
+#include<iostream.h> => cin, cout
+
+import java.util.*; Scanner
+
+using system; Console.w
+
+function () {
+        return this.personName + ' ' + this.personSalary;
+    }
+
+function: object data and local data
+
+1. in JS for every function (whether you call it or not) that you have written, an object will be created JS engine in the runtime process (either browser or node js) at the beginning. That object is known as Prototype object (of that function). This object is mainly used for inheritance. when any other object is created by calling that function, immediately the newly created object gets linked with the prototype object of that function. every function's prototype object is again linked with the top level "Object" function's prototype object. thus creating a prototype chain. now when you try to access a property with newly created object, if that is not found in the immediate object, JS looks up the prototype chain. if no object in that chain contains the property an error will be thrown.
+2. again, when the function is actually called, then JS separately creates another object to store the values of local variables of the function
+
+
+
+
