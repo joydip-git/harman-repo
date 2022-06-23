@@ -31,6 +31,47 @@ function: object data and local data
 2. again, when the function is actually called, then JS separately creates another object to store the values of local variables of the function
 
 
+modules in JS: brought to the world by Node js
+
+module: an object representing a single JS file
+module format: a format/(way to create modules) to export members from one file and import in another filese
+ex: Common JS, ES6, AMD (Asynchronous module definition), UMD (Universal module definition) format
+
+import-export:
+
+Common JS format: [default format to import/export modules in Node JS]
+------------------------------
+a.js
+--------------
+function foo(){}
+module.exports = { fn:foo}
+//exports: a property of the module object which lets you export certain members of te file to the outside
+
+
+b.js
+-------------------
+var aModuleMembers = require('./a');
+//require method provides the exports object to this file
+aModuleMembers.foo();
+
+import/export (ES6) format:
+-------------------------------------------
+a.js
+--------------------
+export function foo(){} //exports the foo function
+
+b.js
+----------------
+import { foo } from './a' //imports the foo function
+
+AMD:
+definition('',[]){
+  function foo(){}
+  exports = {fn:foo} 
+}
+
+
+
 
 
 

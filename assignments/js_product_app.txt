@@ -1,0 +1,22 @@
+1. create a class named 'product' with following members:
+	a. data: name, id, price, description, imagepath
+	b. method: print (will return the name, price and description of the product)
+
+2. create an array to store different product objects (do not add any product at this momemnt)
+3. create some sampple product objects
+4. add them into the array through a function addProduct
+function addproduct(productObj){
+	//add the product in the array
+}
+5. iterate through the array and call print() on every product object. write that code in another function showProducts
+function showProducts(){
+	//display the products (name, price and description)
+}
+6. delete a product from the array (given the product id) - create a function for that
+function delete(id){
+	//delete a product from the array with the given id
+}
+7. update a product in the array through a function updateProduct [id of the product shoul not be updated]
+function updateProduct(updated-values,id){
+	//search the same product in the array and update the record
+}

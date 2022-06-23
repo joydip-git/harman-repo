@@ -1,11 +1,25 @@
 //1. employee constructor function
+/**
 function employee(name, id, basic, da, hra) {
     this.empName = name;
     this.empId = id;
     this.empBasic = basic;
     this.empDa = da;
     this.empHra = hra;
-    this.calculateSalary = function () {
+}
+employee.prototype.calculateSalary = function () {
+    return this.empBasic + this.empDa + this.empHra;
+}
+ */
+class Employee {
+    constructor(name, id, basic, da, hra) {
+        this.empName = name;
+        this.empId = id;
+        this.empBasic = basic;
+        this.empDa = da;
+        this.empHra = hra;
+    }
+    calculateSalary() {
         return this.empBasic + this.empDa + this.empHra;
     }
 }
@@ -27,8 +41,4 @@ for (var i = 0; i < employees.length; i++) {
     var emp = employees[i];
     var empSalary = emp.calculateSalary();
     console.log('salary of ' + emp.empName + ' is ' + empSalary);
-}
-
-for (var x = 5; x > 0; x--) {
-    console.log(x)
 }

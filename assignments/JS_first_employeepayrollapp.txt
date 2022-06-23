@@ -5,3 +5,5 @@
 3. now create at least two employee objects
 4. store them in an array
 5. iterate through the array and display the name and total salary of those employees
+
+6. convert the constructor function in class
