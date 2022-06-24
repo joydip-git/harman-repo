@@ -1,22 +1,26 @@
-1. create a class named 'product' with following members:
+1. create a class named 'product' with following members in a separate file
 	a. data: name, id, price, description, imagepath
 	b. method: print (will return the name, price and description of the product)
 
-2. create an array to store different product objects (do not add any product at this momemnt)
-3. create some sampple product objects
-4. add them into the array through a function addProduct
+2. create an array to store different product objects (do not add any product at this momemnt) in a separate file "repository.js"  const products=[]
+3. create some sampple product objects in index.js file
+4. add them into the array through a function addProduct. write that in separate file "productManager.js"
 function addproduct(productObj){
 	//add the product in the array
 }
-5. iterate through the array and call print() on every product object. write that code in another function showProducts
+5. iterate through the array and call print() on every product object. write that code in another function showProducts. write that in separate file "productManager.js".
 function showProducts(){
 	//display the products (name, price and description)
 }
-6. delete a product from the array (given the product id) - create a function for that
+6. delete a product from the array (given the product id) - create a function for that. write that in separate file "productManager.js"
 function delete(id){
 	//delete a product from the array with the given id
 }
-7. update a product in the array through a function updateProduct [id of the product shoul not be updated]
+7. update a product in the array through a function updateProduct [id of the product shoul not be updated]. write that in separate file "productManager.js"
 function updateProduct(updated-values,id){
 	//search the same product in the array and update the record
 }
+
+8. write the code in modular way to run it in Node JS [use common js format]
+
+index.js, product.js, productManager.js [ create a class named ProductManager with methods: showproducts, addproducts, deleteproduct, updateproduct etc.], repository.js
