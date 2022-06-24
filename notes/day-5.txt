@@ -1,0 +1,55 @@
+1. revision: function, object and module in JS
+2. callback mechanism
+3. array related different built-in functions
+4. asynchronity in JS
+
+function:
+	a. function declaration:
+		there will be a named function
+		the declared function can be called even before the function declaration
+	b. function expression
+		there will be a variable referring to an anonymous function
+		the expressed function can't be called even before the function expression
+
+function related objects:
+-----------------------------------------------
+a. for every function JS engine creates an object. known as prototype object of that function. it is used for inheritance.
+b. when you now call the function another object is created for that function. known as execution context object of that function. this object contains three properties: "this", "scopes" and "objectVariable". ecah of them refers to other objects.
+c. a function keeps a copy of its outer variables. that object is an array. that array is referred by the property "scopes" of the EC object.
+d. whenever you call any JS function with new keyword, immediately a new object is created and that object gets linked with the prototype object of the function. this object stores object specific data of the function. this object is referred by "this" property of the EC object.
+
+function related variables:
+----------------------------------------------------
+in function you can declare two types of data=>
+	a. local variables: they are stored in that object referred by "objectVariable" property of the context object
+	b. data members of an object: they are stored in the newly created (when the function is called with new keyword), referred by "this" property of the context object. 
+
+closure: a mechanism through which a inner function can access the outer function variable, even though most propbably the outer function execution is over. this is done by maintaining a copy of all the outer variables for a function in an array, referred by the scopes property of EC object of the inner function
+-------------------------------------------------------------------------------------------------------------------
+you can access a data (local variable or object data) or anything of an outer function from inner function. But, you can't access a data (local variable or object data) or anything of an inner function from outer function.
+Interestingly, if any variable of outer function which is used in inner function, that variable still remain alive, though outer function execution might be over and after that you are calling the inner function, even though the outer functiin execution object is destroyed, thus destroying the object which stores those outer function variables.
+
+JS execution:
+--------------------------------
+the entire JS code is
+	a. first step: interpreted by the engine (preparation phase)=> only any declarations (function, variable decalration) are accounted for/logged in an object. this technique is known as Hoisting. 
+		- variable hoisting: all variables of the curent function that is being executed, are hoisted
+		- function hoisting: the function declarations are hoisted, NOT the function expressions
+	b. second step: executed by the engine (execution phase)
+
+ECMAScript [ES] (W3C): guideline for all scripting language
+year	version
+--------------------------
+2011	ES5 (5.1)
+2015	ES6
+
+ES6 new features:
+let, const keyword
+class, constructor, extends, super keywords
+import,export keywords [module format keywords in ES6]
+
+
+
+
+
+
