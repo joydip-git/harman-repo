@@ -1,0 +1,47 @@
+Create an employee management system application:
+this application helps you to
+	- add employee records
+	- update employee records
+	- filter employe records
+	- display all employee records
+	- calculate salary of an employee
+employees are of two different types: developer and hr
+
+every type of employee has following members:
+a. data: name, id, basicpayment, dapayment, hrapayment, totalsalary
+b. methods: 
+	i. calculateSalary: common method to calculate salary of an employee based on basicpayment, dapayment and hrapayment. the calculated salary is stored in the totalsalary data member
+		parameters: none
+		return type: none
+	ii. print: is used to print selected information [name, id, totalsalary] about an employee 
+		parameters: none
+		return type: a sting containing above mentioned selected information
+
+every developer type employee has following members:
+a. data: incentivepayment, additionally along with the common data members
+b. methods: 
+	i. calculateSalary: is used to calculate salary of a developer, which invloves basicpayment, dapayment, hrapayment and incentivepayment. the calculated salary is stored in the totalsalary data member.
+		parameters: none
+		return type: none
+	ii. print: is used to print selected information [name, id, totalsalary] about an employee 
+		parameters: none
+		return type: a sting containing above mentioned selected information
+
+every hr type employee has following members:
+a. data: gratuitypayment, additionally along with the common data members
+b. methods: 
+	i. calculateSalary: is used to calculate salary of an hr, which invloves basicpayment, dapayment, hrapayment and gratuitypayment. the calculated salary is stored in the totalsalary data member.
+		parameters: none
+		return type: none
+	ii. print: is used to print selected information [name, id, totalsalary] about an employee 
+		parameters: none
+		return type: a sting containing above mentioned selected information
+
+Note:
+	- create the application to run in the node js environment
+	- create the application in modular manner, invloving nmultiple files and using common js format
+		- each class should be created in separate file
+		- array should be used to store all the employee objects and that should be created in separate file
+		- the function to add, display, filter, update employees should be created in a separate file
+		- finally there should be a main file from which those functionalities will be called
+		- filtration of employees would done based full or partial name
