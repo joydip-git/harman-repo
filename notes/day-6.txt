@@ -1,0 +1,16 @@
+CRUD: Create, Read, Update, Delete
+
+
+storage of data: where data is stored (array)
+type of data: employee/product/...
+operations: Create, Read, Update, Delete
+	type of logic:
+			data access logic: (how to add record into an array, to remove from array, to update into array,fetching all records from the aray,....)
+			business logic: sorting all the feteched records, generating a product id through business logic
+
+			presentation lgic: how to display the fetched records into a webpage, how to accept product values from HTML page,....
+
+new features in JS:
+string interpolation/templated string
+
+dao=> data access object
