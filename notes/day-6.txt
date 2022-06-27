@@ -14,3 +14,54 @@ new features in JS:
 string interpolation/templated string
 
 dao=> data access object
+
+module formats: common js, es6, amd, umd,...
+module loader: Common JS loader, Require JS loader [understands amd module format], 
+
+es6, common js,... => babel => amd
+
+define('',[],function(){
+   exports
+})
+
+1. convert this JS code with new features back to older version of JS (vanilla JS) [use different plugins for different features or use a preset by the name @babel/preset-env. preset is a package, which itself is a collection of many plugin packages]
+
+const x=10 => var x = 10 [plugin]
+let y = 20	var y = 20 [plugin]
+class Product{ constructor(name,id,price,...){} print(){}}
+
+function Product(name,id,price,...){
+	this.name = name;
+	................
+}
+product.prototype.print=function(){}
+
+2. convert ES6 module format into AMD module format [plugin: @babel/plugin-transform-modules-amd]
+
+transpiler (transforms your code)
+babel, typescript => 
+
+
+var x =10
+
+.\node_modules\.bin\babel src --out-dir build
+var people = [ {name:'joydip', id:1, salary:1000}, {name:'joydip', id:1, salary:1000}]
+JSON=> JavaScript Object Notation
+{ "x":10}
+
+{ 
+	"people":
+		[
+		  {"name":"Joydip", "id":1, "salary":1000, "isManager":true, employees:[{},{}]},
+		  {"name":"Joydip", "id":1, "salary":1000,"isManager":false, employees:[]}
+		]
+}
+number, string, object, bool
+
+babel=> transpiler
+babel uses lots of transformer plugins for transformation of your code
+such, to convert clas keyword into older version babel uses a transformer, whereas to convert const keyword into older JS, it uses another transformer plugin
+
+
+
+

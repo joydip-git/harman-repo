@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMS APP</title>
+    <!-- <script src="./src/db/productRepository.js"></script>
+    <script src="./src/entities/product.js"></script>
+    <script src="./src/dataaccesslayer/productDao.js"></script>
+    <script src="./src/businesslayer/productBo.js"></script> -->
+    <script src="./scripts/require.js" data-main="./build/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <div id="formDiv" class="container">
+        <form class="form-group">
+            <label for="txtId">Id:&nbsp;</label>
+            <input type="text" id="txtId" class="form-control" placeholder="enter product id here">
+            <br>
+            <label for="txtName">Name:&nbsp;</label>
+            <input type="text" id="txtName" class="form-control" placeholder="enter product name here">
+            <br>
+            <label for="txtPrice">Price:&nbsp;</label>
+            <input type="text" id="txtPrice" class="form-control" placeholder="enter product price here">
+            <br>
+            <label for="txtDesc">Description:&nbsp;</label>
+            <input type="text" id="txtDesc" class="form-control" placeholder="enter product description here">
+            <br>
+            <label for="txtImgPath">Image Path:&nbsp;</label>
+            <input type="text" id="txtImgPath" class="form-control" placeholder="enter product image path here">
+            <br>
+            <div class="btnStyle">
+                <input type="button" value="Add Product" class="btn btn-primary" id="btnAdd" onclick="addData()">
+            </div>
+        </form>
+        <br><br>
+        <div>
+            <button id="btnShow" onclick="showData()" class="btn btn-alert">Show All</button>
+            <br />
+            <div class="tbl-responsive">
+                <table class="table" id="tblProducts">
+                    <thead id="tblProductsHead">
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblProductsBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

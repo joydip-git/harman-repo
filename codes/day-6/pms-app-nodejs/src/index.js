@@ -1,6 +1,7 @@
 const productModule = require('./entities/product')
 const productBoModule = require('./businesslayer/productBo')
 
+
 //1. add new products into the storage
 const dellXpsProduct = new productModule.Product(2, 'dell xps', 10000, 'new laptop from dell', '')
 const probookProduct = new productModule.Product(1, 'hp probook', 30000, 'new laptop from hp', '')

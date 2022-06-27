@@ -1,0 +1,25 @@
+{
+    "name": "pms-web-browser-app",
+    "version": "1.0.0",
+    "author": {
+        "name": "joydip",
+        "email": "joydip.mondal@gmail.com",
+        "url": "http://www.joydip.com"
+    },
+    "main": "./src/index.js",
+    "license": "MIT",
+    "keywords": [
+        "ES6",
+        "module",
+        "JS"
+    ],
+    "repository": {
+        "url": "https://github.com/joydip-git/harman-repo/codes"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.18.5",
+        "@babel/plugin-transform-modules-amd": "^7.18.0",
+        "@babel/preset-env": "^7.18.2"
+    }
+}
