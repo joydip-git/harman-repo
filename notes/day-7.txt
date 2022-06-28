@@ -5,7 +5,7 @@
 	b. you need to either write modules in AMD format (since require js module loader expects and understands that format) or get your module format converted to AMD format
 4. web application:
 	a. you might have written the JS code using lots of new feature, which, unfortunately might not be understood by the older browser (since they have older JS engine). so get your latest JS code converted to older version of JS (preferrably <ES6 (ex: ES3, ES5))
-	b. package.json: it is a JSON file containing information (metadata) about an application, such as: name, version number, author, license, depndency and dev-dependency packages required for this application etc. this file should be at the root of the application directory. either you create the file manually or use npm command "npm init" to create the file
+	b. package.json: it is a JSON file containing information (metadata) about an application, such as: name, version number, author, license, depndency and dev-dependency packages required for this application etc. this file should be at the root of the application directory. either you create the file manually or use npm command "npm init" to create the file or npm command "npm init --yes"
 	c. NPM: node package manager, used to download and install packages, run scripts etc. for your application. this toll gets automatically installed, when you install node js s/w in your system. this tool is created also, using node js framework and JS
 
 Tanspiler: such as Babel for JS, TSC for TypeScript
@@ -25,9 +25,33 @@ Babel package comfiguration: after installing all packages related to Babel, you
 whenever you install any packages for your application, the packages gets installed in node_modules folder
 in that folder the first directory is: ".bin" directory, where all the excutables (script files for the packages) are present
 
+whatever extra features that typescript privodes, are completely ignored, when the TS code is converted in JS, since those features are absent not only in JS, but in ES also
+
 to run babel: >babel <source-code-dir> --out-dir <output-directory>
 	      >babel src --out-dir build
 
+TypeScript:
+a. strict typing
+b. compile type checking
+c. additional features
+
+any typescript code has to be converted into JS: use TSC (Typescript compiler)
+>npm install typescript -D
+configure typescript (like babel): at the roor of your directory create a file tsconfig.json
+
+Require JS: a module loader. used and optimized for browser. understands AMD module format.
+#1:
+NPM: >npm install requirejs
+Use: link with HTML file: 
+<script src="./node_modules/requirejs/require.js" data-main="./build/index.js"></script>
+
+#2: Manual:
+a. visit the URL: https://requirejs.org/docs/download.html
+b. click on the button "Minified", you will be redirected to the link: https://requirejs.org/docs/release/2.3.6/minified/require.js
+c. copy the require js code
+d. place it in a JS file in your application [ex: require.js file]
+Use: link with HTML file: 
+<script src="<dir>/require.js" data-main="./build/index.js"></script>
 
 
 

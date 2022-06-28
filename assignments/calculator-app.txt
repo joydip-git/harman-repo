@@ -1,0 +1,6 @@
+create a calculator app:
+	a. two text boxes: one each for two values
+	b. on click of the button add/subtract/multiply/divide based on the choice selected through radio button
+
+index.js+utility.js(with those four functions)+index.html+require.js+bootstrap+babel
+Do not need: separate BO, DAO, model, repo etc.

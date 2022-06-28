@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "module": "AMD",
+        "target": "ES5",
+        "lib": [
+            "DOM"
+        ]
+    }
+}
