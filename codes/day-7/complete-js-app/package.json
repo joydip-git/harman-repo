@@ -1,0 +1,31 @@
+{
+  "name": "complete-js-app",
+  "version": "1.0.0",
+  "description": "js app to manage product data",
+  "main": "./src/index.js",
+  "scripts": {
+    "transpile": "babel src --out-dir build",
+    "server": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/joydip-git/harman-repo/codes"
+  },
+  "keywords": [
+    "module",
+    "ES6",
+    "babel"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-transform-modules-amd": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.4.1"
+  }
+}
