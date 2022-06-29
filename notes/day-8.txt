@@ -1,2 +1,27 @@
 1. typescript
 2. complete web app
+
+Architecture: 3 tier architecture with MVVM
+	A. presentation layer:
+		a. views [index.html]
+			i. design: HTML
+			ii. styling: css
+		b. view-model: [index.js/ts]
+			i. code: JS/TS
+	B. business layer: [productBo.js/ts]
+		code: JS/TS => business logic, such as: filtering, sorting data, generating unique id for the data
+	C. data access layer/persistance layer: [productDao.js/ts]
+		code: JS/TS => data access logic, such as inserting record into storage, updating record into storage, deleting record from storage, fetching record(s) from staorge...
+	D. models: [product.js/ts]
+		code: JS/TS => a class/interface to represent your data
+
+Artifacts:
+	a. transpiler: babel/tsc
+	b. additional packages: bootstrap, requirejs, lite-server etc....
+	c. configuration: package.json, tsconfig.json, .babelrc file
+	d. scripts: scripts wil be written in package.json file, such as, script for transpilation, running some app development server etc.
+
+
+new features: spread and rest operator (...), object destructuring, class, constructor, super, extends,sting interpolation, module (import/export).......
+
+

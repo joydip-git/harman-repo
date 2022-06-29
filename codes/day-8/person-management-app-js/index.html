@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Management System</title>
+    <script src="./node_modules/requirejs/require.js" data-main="./dist/index.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+    <div class="container marginTopStyle">
+        <div class="panel centerStyle">
+            <input type="radio" name="personGroup" id="radioStudent">&nbsp;<b>Student</b>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="personGroup" id="radioProfessor">&nbsp;<b>Profssor</b>
+        </div>
+        <div class="panel panel-body">
+            <form action="" class="form-group">
+                <label for="">Name:&nbsp;</label>
+                <input type="text" class="form-control" id="txtName">
+                <br>
+                <label for="">Marks/Books:&nbsp;</label>
+                <input type="text" class="form-control" id="txtExtra">
+                <br>
+                <div class="centerStyle">
+                    <input type="button" value="Submit" class="btn btn-primary" id="btnAdd">
+                </div>
+            </form>
+        </div>
+        <div class="centerStyle">
+            <button class="btn btn-danger" id="btnShow">Show People</button>
+            <br>
+            <div>
+                &nbsp;
+                <input type="checkbox" id="checkOutstanding">&nbsp;Show only Outstanding People
+            </div>
+            <ul class="list-group" id="listOfPeople">
+                <!-- <li class="list-group-item">
+                    <span class="badge">
+                        85
+                    </span>
+                    Anil
+                </li>
+                <li class="list-group-item">
+                    <span class="badge">
+                        5
+                    </span>
+                    Sunil
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
