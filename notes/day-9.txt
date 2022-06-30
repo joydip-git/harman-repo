@@ -14,8 +14,24 @@ function someFn(){
 	fn()
 }
 4. asynchronity
+	class A{}
+	//main thread
+	main(){
+		int a = 20;
+		//create();
+	}
+	create(){
+		int a=10;	
+		A obj = new A();
+	}
 
+	//synchronous
+	main(){ }
+	printDocument(){}
+	editDocument(){}
 
 5. webpack (bundler)
 6. component-based application
 7. react js
+
+promise object
