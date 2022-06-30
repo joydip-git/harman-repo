@@ -1,3 +1,7 @@
+// <obj-ref>.fn() => function will bound to the object referred by <obj-ref>
+//new fn() => the function will be bound to a new object
+//fn() => wil be bound to some default object (will not be if strict mode is on in JS, 'use strict')
+
 /*
 const someObj = {
     data: 10
