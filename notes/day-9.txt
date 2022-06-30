@@ -1,7 +1,18 @@
 1. closure - done
 2. callback - done
 
-3. new features (arrow function)
+3. new features 
+- let: to declare scoped variable, const, object destructuring, spread and rest operator, string interpolation [templated string], class, super, extends, constructor
+
+arrow function: when you write a function using arrow function style, the function gets bound to the same context (object) as that of the immediate OUTER FUNCTION. it is same as that of writing the function without arrow style and then calling bind() method on it to bind to some object
+
+function someFn(){
+	//const fn = ()=>{}
+	//or
+	let fn = function(){}
+	fn = fn.bind(this)
+	fn()
+}
 4. asynchronity
 
 

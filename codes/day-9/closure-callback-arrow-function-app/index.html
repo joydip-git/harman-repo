@@ -11,12 +11,21 @@
 <body>
     <!-- <button id="btnClick" onclick="buttonClicked()">Click Me!!!</button> -->
     <button id="btnClick">Click Me!!!</button>
+    <br />
+    <br />
     <script>
         const buttonObj = document.getElementById('btnClick')
         buttonObj.onclick = buttonClicked
         // buttonObj.addEventListener('click', buttonClicked)
         function buttonClicked() {
             window.alert('button clicked')
+            const divElement = document.createElement('div')
+            const data = 'How does it look????'
+            divElement.innerHTML = `
+                <span style="background-color:lime;font-family:'Segoe UI';font-size:'medium'">Welcome to String interpolation</span>
+                <p>${data}</p>
+            `
+            document.body.appendChild(divElement)
         }
         //buttonClicked()
     </script>
