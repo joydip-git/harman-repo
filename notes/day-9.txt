@@ -1,0 +1,10 @@
+1. closure - done
+2. callback - done
+
+3. new features (arrow function)
+4. asynchronity
+
+
+5. webpack (bundler)
+6. component-based application
+7. react js
