@@ -18,3 +18,48 @@ readystate:
 chaneg in value triggers an event: readyStateChange
 
 new features: async, await
+
+client-side library/framework:
+React JS: a JS library to create client-side SPA based on components
+fetch(), axios (Axios.get(),post(), put(),delete())
+react-router-dom
+Angular: a JS framework to create client-side SPA based on components and many other artifacts
+HttpClient, Router
+Vue.js
+
+tool: create-react-app tool helps you create react application 
+
+react, react-dom
+jest
+
+<html>
+<body>
+  <div></div> 
+</body>
+</html>
+
+components:
+add.html design: <form></form>
+code: add.js
+
+update: update.html
+<form></form>
+
+
+delete
+<input text="">
+
+show
+<table></table>
+
+
+Node JS installation directory: C:\Program Files\nodejs
+Third party node package installation global directory: C:\Users\joydip\AppData\Roaming\npm
+(npm i <package-name> -g)
+
+react-payroll-app
+a. add form related component
+b. show all related component
+c. update component 
+d. delete component
+
