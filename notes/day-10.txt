@@ -1,0 +1,20 @@
+asynchronous functions
+Promise
+
+f1(){ retrun 12}
+
+f2(){}
+
+f1()
+f2()
+
+readystate:
+0=>initialized
+1=>request sent
+2=>request received by server
+3=>processing
+4=>response returned
+
+chaneg in value triggers an event: readyStateChange
+
+new features: async, await
