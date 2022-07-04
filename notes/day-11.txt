@@ -26,6 +26,8 @@ function Foo(){
 	return design;
 }
 
+HTML-> data formatting language (how to display the data)
+//data describing language
 <?xml version="1.0">
 	<products> <-- root element (only one root elemnt is possible in XML file)
 		<product id="1">
@@ -39,3 +41,13 @@ function Foo(){
 			<name>new mobile from Apple</name>
 		</product>
 	</products>
+
+
+How to pass data from one (parent) to another component (nested)
+
+package name: prop-types
+facility: provides defining properties for a component and helps to validate those properties
+installation: >npm i prop-types
+
+attach a property 'propTypes' to any component
+pass an object to that property 'prop-types'. this object will contain definition of properties for that component.
