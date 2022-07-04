@@ -2,3 +2,40 @@ spread operator
 event-driven programming model
 HTML div and span
 promise
+
+JSX (JavaScript XML)
+import React from 'react'
+function Foo(){
+	const design=(
+		<div id='welcomeDiv'>
+			welcome to react js
+		</div>		
+	)
+}
+
+without JSX
+import React from 'react'
+function Foo(){
+
+	//creating a React element
+
+	//const design = React.createElement('div')
+	//design.innerText='welcome to react js'
+
+	const design = React.createElement('div',{ id:'welcomeDiv'},'welcome to react js')
+	return design;
+}
+
+<?xml version="1.0">
+	<products> <-- root element (only one root elemnt is possible in XML file)
+		<product id="1">
+			<name>Dell XPS</name>
+			<price>10000</name>
+			<name>new laptop from dell</name>
+		</product>
+		<product id="2">
+			<name>iPhone 6</name>
+			<price>20000</name>
+			<name>new mobile from Apple</name>
+		</product>
+	</products>
