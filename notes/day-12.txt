@@ -1,0 +1,38 @@
+component => design (HTML) + code (JS)
+
+*.js/*.jsx => design (JSX) + code (functionalities/data/styling)
+
+props: mechanism of pasing data from parent to a nested component
+when you use a nested component inside a parent component and you would like to pass some data/function to the nested from parent component, you should use some random attributes and pass the value. Now, React JS creates an object containing properties with the same name as that of the attributes used by you to pass data from parent to nested and pass that object to the nested component. the object carries that carries the data is a readonly object, i.e., all the properties of that object are readonly. in the nested component you can't change (mutate) the values of those properties 
+
+prop-types package: it helps you to prededine the attributes of a component. You can also mention whether those properties of the component are mandatory to be used or not, as well as define the type of value that should be assigned to those attributes
+
+function Parent(){
+  const data=100
+  const fn = ()=>{}
+  return <Nested value={data} fnHandler={fn}/>
+}
+{
+   value:100,
+   fnHandler:()=>{}
+}
+
+import PropTypes from 'prop-types'
+function Nested(props){
+	//props.value=200
+	return <span onMouseOver={props.fnHandler}>{props.value}</span>
+}
+Nested.propTypes={
+	value:PropTypes.number.isRequired,
+	fnHandler:PropTypes.func.isRequired
+}
+
+using ref (property of every React Element) in React: 
+it is used to store/obtain reference of the Actual DOM HTML elements for some purpose such as, validating the value in those HTML element or put focus on the first HTML element (textbox, button etc.) or even simply to access the values of those design elements in the React component code for manipulation
+
+a. use createRef() method of React: 
+you call createRef() method to create an instance of RefObj class, with intention of storing address of an HTML element. the address of this object of RefObj then is stored in a variable which is then assigned to the ref property of the react element. when react element is converted into HTML element, the address of the HTML element is then stored in that instance of RefObj. in order to access the address of DOM element, use "current" property of the RefObj.
+In this case, the variable stores address of RefObj which stores address of DOM HTML element
+
+b. use callback ref pattern: in this pattern you create a callback function which is then assigned to the ref property of the react element. when react element is converted into HTML element, that funcation is called back and the reference of the HTML element is directly passed to that callback function as an argument. that address of DOM element can then be stored in a variable.
+In this case, the variable stores address of DOM HTML element directly
