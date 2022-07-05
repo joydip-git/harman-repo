@@ -36,3 +36,30 @@ In this case, the variable stores address of RefObj which stores address of DOM 
 
 b. use callback ref pattern: in this pattern you create a callback function which is then assigned to the ref property of the react element. when react element is converted into HTML element, that funcation is called back and the reference of the HTML element is directly passed to that callback function as an argument. that address of DOM element can then be stored in a variable.
 In this case, the variable stores address of DOM HTML element directly
+
+Components:
+	a. functional component
+	b. class component
+
+class component:
+React provides another way to create component, knowm as Class component
+class component must inherit (extend) from base class "Component" in "react" package
+in class component every member (method or property) is accessed using "this" kewyord
+a. render method: "Component" base class provides you a method "render", which you can inherit and override. this method is where you create the design of the component and this method must return the design (like functional component.
+b. state property: "Component" base class provides you a property "state", which you can inherit and use to store some data of component. React always tracks any changes made in the data stored in the state property of the class component and accordingly re-renders the component design. this way React updates the actual DOM based on change in data in class component. state property must be assigned to an object. it can't be of any other data type (such as, number, string, array, boolean etc.). there can be only ONE state property. state property is not meant to be shared acorss compoments. It is a component's internal data storage, about maintaining the state of the component's own data.
+c. setState method: "Component" base class provides you a method "setState". it is used to update the state of the component. setState updates the state of the component asynchronously and does not block the application. as soon as the state is updated, immediately "render" method is automatically called and the component design is re-rendered with new/updated data. this way React JS updates the actual DOM HTML elements, every time there is a change in data in the component.
+	state update:
+	i. pass an object to setState as an argument. the object must contain the properties which you want to update.
+	this.setState({propname:value})
+	ii. pass a function to setState as an argument. Make sure that function creates an object with propery names to update and then returns that object. setState method will call that function and will get in turn that object.
+	this.setState( (currentState)=>{ return { propname: currentState.propname+1} } )
+
+NOTE: never update any state property directly. ["never mutate the state directly. mutate it immutably. always use setState method"]
+	then in that case React does not call the render method. you have do it manually. 
+	also, there is no gurantee when that updation will take place. 
+	also the current state, if modified directly, might result into discrepency between what is actually displayed in UI and what is the current value in the code.
+
+
+
+
+

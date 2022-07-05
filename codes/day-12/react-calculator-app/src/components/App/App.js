@@ -1,10 +1,15 @@
-import Calculator from '../Calculator/Calculator';
+//import Calculator from '../Calculator/Calculator';
+import CalculatorWithState from '../Calculator/CalculatorWithState';
+import Sample from '../Sample/Sample';
 import './App.css';
 
 function App() {
   return (
     <div className="container">
-      <Calculator />
+      {/* <Calculator /> */}
+      <CalculatorWithState />
+      <br />
+      <Sample />
     </div>
   );
 }
