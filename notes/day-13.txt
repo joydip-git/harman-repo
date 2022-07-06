@@ -44,6 +44,43 @@ then in the design of the ProductList component display the name of products, pr
 
 render => return null
 
+creating components
+types of components (class and functional)
+how to pass data using props
+how to maintain state of data using state property and setState method in class component
+how to dyamically generate list of react elements based on data present in an array/collection
+how to fetch data asynchronously in react appliaction from some RESTful API server using axios/fetch
+how to display the asynchronously fetched data in a class component? 
+answer: use lifecycle method, such as, componentDidMount
+
+URL			HTTP method	input		method			 response
+----------------------------------------------------------------------------------------------------------------
+http://.../products	GET		NA		fetchProducts		  an array of product records (JSON)
+http://.../products	POST		product object	insertProduct(productobj) {message, data}
+http://.../products	PUT		product object	modifyProduct(productobj) {message, data}
+
+http://.../products/1	GET		id(1)		fetchProduct(id)	  a product record (JSON)
+http://.../products/1	DELETE		id(1)		deleteProduct(id)	  {message, data}
+
+REST => Representational State Transfer
+
+<? xml version="1.0">
+<products>
+	<product id="1">
+		<name>dEll xps</name>
+		..................
+	</product>
+</products>
+
+class component lifecycle:
+1. constructor called, an object of class component is created
+2. render method called and the design of the component is returned
+3. now, that react element (design) is converted to HTML (actual DOM). this is the time an event gets fired (mount) of class component. when the mount event gets fired, the componentDidMount() method gets called. if you have written the method in the class, the code inside the method will be executed
+
+render: render creates virtual dom (react element)
+mounting: the very fisrt time a component's design is translated into Actual DOM (HTML) and displayed in the browser. this happens only once in the lifetime of that component object (till the destruction of that object).
+
+
 
 
 
