@@ -1,0 +1,6 @@
+create an application which displays employee records in a table
+a. create Employee class: employeeName (string), employeeId (number), employeeLocation (string), employeeSalary (number), employeeAge (number), employeeDepartment (string)
+b. create a component EmployeeList to
+	i. store sample Employee class objects in the state property of the component
+	ii. display the records in the render function using a table
+c. create EmployeeRow component which will be responsible for displaying one tr (table row) with a single employee record
