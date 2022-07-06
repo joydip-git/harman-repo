@@ -1,0 +1,51 @@
+callback ref
+
+this.state={
+	prop1:value1
+}
+
+a. setState({prop1:newvalue})
+b. setState( 
+	(currentState)=>{ 
+		const newState={prop1:newvalue+currentState.prop1} 
+		return newState
+	} 
+)
+
+1. how to display series of values in react component? you use map() function of array
+
+	const numbers=[1,2,3,4]
+	<ul>
+	{
+		const list = numbers.map(
+			(num)=>{
+				return <li>{num}</li>
+			}
+		)
+	}
+	</ul>
+	[
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	]
+
+2. class vs. functional component
+	a. do you need to maintain state of data in component? yes => class component
+	b. do you need to handle lifecycle of a component? yes => class component
+
+
+task: to display a list of products
+create a model class: Product=>productId, productName, price, description, imageUrl, starRating, releaseDate
+create a class component ProductList
+store an array of sample Product objects in the state property of the class component
+then in the design of the ProductList component display the name of products, present in the state, using an unordered list
+
+render => return null
+
+
+
+
+
+

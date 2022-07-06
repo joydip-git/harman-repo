@@ -4,6 +4,7 @@ class Sample extends Component {
     constructor() {
         super()
         //initialization of state with properties assigned to some default values
+        //state property must be assigned to an object containing properties and their values
         this.state = {
             name: '',
             num: 0,
