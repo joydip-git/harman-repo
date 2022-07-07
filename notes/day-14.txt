@@ -1,0 +1,59 @@
+1. lifecycle
+2. data fetching
+
+component in react? return a tree of react elements (design)
+
+class Sample1 extends Component{
+constructor(){
+	super()
+	this.state={ num:0}
+}
+increase=()=>{
+	this.setState(
+		(cs)=> { return { num: cs.num+1} }
+	)
+}
+render(){
+	const design = (
+		<div onlcick={this.increase}>
+			<span>Welcome</span>
+			<br/>
+			<span>{this.state.num}</span>
+		</div>
+	)
+	return design
+	}
+}
+
+function Sample2(){
+const design = (
+		<div>
+			<span>Welcome</span>
+			<br/>
+			<span>React is JS library </span>
+		</div>
+	)
+return design
+}
+
+a piece of total VDOM
+
+function App(){
+	const sample1Design = (new Sample1()).render()
+	const sample2Design = Sample2()
+	const design = (
+		<div>
+			<Sample1/> or { sample1Design }
+			<Sample2/> or { sample2Design }
+		</div>
+	)
+}
+
+side-effect causing code:
+fetching data from RESTful API application
+making network request using sockets
+reading data from file 
+etc.
+
+Note: side-effect causing codes should not be written in constructor or render method of class component
+
