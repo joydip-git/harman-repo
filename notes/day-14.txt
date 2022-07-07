@@ -57,3 +57,8 @@ etc.
 
 Note: side-effect causing codes should not be written in constructor or render method of class component
 
+functional components: stateless/presentational component
+class components: stateful component
+
+
+
