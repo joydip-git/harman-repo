@@ -8,7 +8,6 @@ class PostsContainer extends Component {
     constructor() {
         super()
         this.state = {
-            show: false,
             posts: [],
             fetchComplete: false,
             errorMessage: '',
@@ -20,16 +19,6 @@ class PostsContainer extends Component {
         this.setState({
             selectedPostId: postId
         })
-    }
-
-    changeShow = () => {
-        this.setState(
-            (currentState) => {
-                return {
-                    show: !currentState.show
-                }
-            }
-        )
     }
     render() {
         console.log('[Posts] rendered')
@@ -50,11 +39,9 @@ class PostsContainer extends Component {
                 {postsDesign}
                 <br />
                 <br />
-                <button onClick={this.changeShow}>{this.state.show ? 'Hide' : 'Show'}</button>
-                <br /><br />
                 {
                     /* selectedPostId > 0 && <SinglePost /> */
-                    selectedPostId > 0 & this.state.show ? <SinglePost selectedId={selectedPostId} /> : <span>Please select a post now...</span>
+                    selectedPostId > 0 ? <SinglePost selectedId={selectedPostId} /> : <span>Please select a post now...</span>
                 }
             </div>
         )

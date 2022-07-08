@@ -1,0 +1,22 @@
+import React, { Component } from 'react'
+import PropTypes, { func } from 'prop-types'
+
+/*
+class Sample extends Component {
+    static propTypes = {
+        name: PropTypes.string.isRequired
+    }
+    render() {
+        return (
+            <div>Sample</div>
+        )
+    }
+}
+*/
+function Sample() {
+    return <div>Hello</div>
+}
+Sample.propTypes = {
+    name: PropTypes.string.isRequired
+}
+export default Sample

@@ -1,0 +1,127 @@
+React Hooks
+React Routing
+
+why class component?
+	a. maintain state
+	b. lifecycle
+
+some useful functions (APIs): React 15
+
+class Sample extends Component{
+	constructor(){
+		super()
+		this.state={}
+	}
+	render(){
+		return <div>Hello</div>
+	}
+	componentDidMount(){}
+	componentDidUpdate(){}
+}
+<Sample/>
+
+function Component(props){
+	this.state=undefined
+	this.props = props	
+	this.render=function(){}
+	this.componentDidMount=function(){}
+	this.componentDidUpdate=function(){}
+}
+function Sample(props){
+	Component.call(this, props)	
+	this.state={num:0}
+	this.render=function(){
+		return <div>Hello</div>
+	}
+	this.componentDidMount=function(){
+	}
+	this.componentDidUpdate=function(){
+	}
+}
+
+const sampleObj = new Sample()
+sampleObj.render()
+
+
+class state vs. useState state
+----------------------------------------------------------------------------------------------------------
+1. class component's state property must be an object. in that object using different properties, you can save the data
+   useState hook provides state in functional component, which can store any data. this state need not to be an obkect always
+2. in class component you can have one and only one state (which is big fat JS object)
+   in functional component you can have more than one state (by calling useState many times). each and every state is different from each other and there is no link between them
+3. update state method has two version:
+	a. it takes the value of some type as that of state 
+	b. it takes a callback which must return the value of same type as that of the state
+Note: the type of state is decided based on what type of initial value you have passed to useState function/hook
+4. in case of state updation, class component's setState() method merges the old and udated state
+   in case of useState, state updation replaces the old state completely by the new state. 
+   So, if the data type of your state is an object, every time you want to update single property of the state object, while creating a new state object, first copy everything from the old state object and replace a property value by new value
+
+
+    //1. useState() hooks a state to your functional component externally
+    //2. state data type can be anything (you can store anything in state). it need not to be an object always
+    //3. you can use more than one state for a functional component
+    //4. when you call useState to hook a state, that time pass initial state value to the useState() function. the passed value will determine the type of state.
+    //5. useState will return an array containing copy of the state (1st index in the array) and reference of a function to update the state (2nd index of the array)
+    //6. update of state replaces the old state completely by the new state
+    //7. you can pass new state directly to the method to update state or you can pass a callback function to the method to update state. in the second case, the callback function can accept the copy of old state and use to calculate new state. but the callback must return the new state anyway
+    //8. updation of the state will re-render this functional component which will update the actual dom, which was created the very first time
+
+    //destructuing the array returned by the useState
+    //num <- stores the copy of the state
+    //setNum <- stores the reference of the function to update the state
+
+    //following code is like slices of much bigger state
+    const [num, setNum] = useState(0)
+    const [name, setName] = useState('sunil')
+    const [show, setShow] = useState(false)
+    const [numbers, setNumbers] = useState([1, 2, 3, 4])
+    const [obj, setObj] = useState({ name: 'anil', location: 'bangalore' })
+
+    //the following is just like state of class component. it is a big fat JS object
+    // const [completeState, setCompleteState] = useState({
+    //     num: 0,
+    //     name: '',
+    //     show: false,
+    //     numbers: [],
+    //     obj: {
+    //         name: '',
+    //         location: ''
+    //     }
+    //})
+
+class component lifecycle methods:
+you need to write side-effect causing code (such as fetching data from RESTful API server asynchronously)
+class component gives you the following methods, which are called when corresponding event gets fired (component is mounted for the every first time or component is updated because of change in state or because of new property value has been received)
+componentDidMount()=> happens after the component has been mounted. the side-effect causing code (which updates the state) will result into re-rendering of the class component design
+componentDidUpdate() => happens after the component has been updated (updated because of change in state or because of new property value has been received). the side-effect causing code (which updates the state) will result into re-rendering of the class component design
+componentWillUnmount() => happens when the component is unmounted from the actual DOM. 
+//in this case, the entire component is unmounted from the actual dom and also the component object is destroyed
+//next time again fresh component object will be created and then mounted in the actual dom
+in this function, you can clean up the resources, like the promise object, subscription or any kind of resource that you used in your side-effect causing code
+
+disadvantages:
+1. whatever side effect causing code you have to write, you have to do that in one componentDidMount() or one componentDidUpdate()
+2. if you write all clean up code in componentWillUnmount(), you have to wait untill the component is unmounted from the DOM. sometimes if you choose to write the side-effect causing code and release of the resource together, that might result into some other problem. even if you manage to write the side effect causing code and clean up code together, you are writing too much at the same place
+
+
+Effect hook:
+useEffect()=> it hooks your functional components with some side-effect causing code 
+Return Type: this function (hook) does not return anything
+Arguments: 
+	a. it takes a callback function (the function containing side-effect causing code) as an argument
+	b. dependency array (list of factors on which the side-effect causing code execution depends). this second argument decides the timing of the execution of the callback function passed to the useEffect()
+
+1st time: 
+	a. first side effect causing code is registered before rendering[pending]
+	b. side effect causing code is executed after rendering[executed]
+	c. clean-up code is registered now [pending]
+
+next time:
+	a. clean-up code is executed first[executed]
+	b. again, side effect causing code is registered before rendering[pending]
+	c. side effect causing code is executed after rendering[executed]
+	d. again, clean-up code is registered now [pending]
+....................
+
+
