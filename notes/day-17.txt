@@ -1,0 +1,8 @@
+1. "key" attribute of every react element
+2. error handling
+3. higher order component (HOC)
+4. react testing
+5. react app with typescript: 
+	a. create TS react js app: >create-react-app <app-name> --template typescript
+	b. routing packages: >npm i react-router-dom @types/react-router-dom
+	c. property definition: Do not need prop-types package, since TS helps you to define data types etc.

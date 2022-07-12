@@ -1,34 +1,24 @@
-//import axios from "axios";
-import React, { Component } from "react";
-import { getSinglePost } from "../../../services/postService";
-/**
- * {
- *  selectedId:1
- * }
- */
-class SinglePost extends Component {
-    // constructor() {
-    //     super()
-    //     this.state = {
-    //         selectedPost: null,
-    //         selectedPostFetchComplete: false,
-    //         selectedPostErrorMessage: ''
-    //     }
-    //     console.log('[SP] created')
-    // }
+import { AxiosError, AxiosResponse } from 'axios'
+import React, { Component } from 'react'
+import Post from '../../../models/Post'
+import { getSinglePost } from '../../../services/postService'
 
-    state = {
+type postDetailStateType = {
+    selectedPost: Post | null,
+    selectedPostFetchComplete: boolean,
+    selectedPostErrorMessage: string
+}
+
+export default class PostDetail extends Component {
+    state: postDetailStateType = {
         selectedPost: null,
         selectedPostFetchComplete: false,
         selectedPostErrorMessage: ''
     }
-
     render() {
-        console.log('[SP] rendered')
-        console.log(this.props)
         const { selectedPost, selectedPostErrorMessage, selectedPostFetchComplete } = this.state
 
-        let singlePostDesign = ''
+        let singlePostDesign;
         if (!selectedPostFetchComplete) {
             singlePostDesign = <span>Loading selected post....</span>
         } else if (selectedPostErrorMessage !== '') {
@@ -50,28 +40,16 @@ class SinglePost extends Component {
         return singlePostDesign
     }
     componentDidMount() {
-        console.log('[SP] mounted')
-        this.fetchPost()
-    }
-    componentDidUpdate(oldProps, oldState) {
-        console.log('[SP] updated')
-        if (this.props.selectedId !== oldProps.selectedId)
-            this.fetchPost()
-    }
-
-    fetchPost = () => {
-        // axios
-        //     .get(`https://jsonplaceholder.typicode.com/posts/${this.props.selectedId}`)
-        getSinglePost(this.props.selectedId)
+        getSinglePost(1)
             .then(
-                (resp) => {
+                (resp: AxiosResponse) => {
                     this.setState({
                         selectedPost: resp.data,
                         selectedPostFetchComplete: true,
                         selectedPostErrorMessage: ''
                     })
                 },
-                (err) => {
+                (err: AxiosError) => {
                     this.setState({
                         selectedPost: null,
                         selectedPostFetchComplete: true,
@@ -81,4 +59,3 @@ class SinglePost extends Component {
             )
     }
 }
-export default SinglePost

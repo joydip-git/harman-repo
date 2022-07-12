@@ -5,15 +5,21 @@ import AllPosts from "../AllPosts/AllPosts";
 import SinglePost from "../SinglePost/SinglePost";
 
 class PostsContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
-            posts: [],
-            fetchComplete: false,
-            errorMessage: '',
-            selectedPostId: 0
-        }
-        console.log('[Posts] created')
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //         posts: [],
+    //         fetchComplete: false,
+    //         errorMessage: '',
+    //         selectedPostId: 0
+    //     }
+    //     console.log('[Posts] created')
+    // }
+    state = {
+        posts: [],
+        fetchComplete: false,
+        errorMessage: '',
+        selectedPostId: 0
     }
     selectedPostIdHandler = (postId) => {
         this.setState({

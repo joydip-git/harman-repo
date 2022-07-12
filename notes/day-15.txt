@@ -46,11 +46,11 @@ sampleObj.render()
 class state vs. useState state
 ----------------------------------------------------------------------------------------------------------
 1. class component's state property must be an object. in that object using different properties, you can save the data
-   useState hook provides state in functional component, which can store any data. this state need not to be an obkect always
+   useState hook provides state in functional component, which can store any data. this state need not to be an object always
 2. in class component you can have one and only one state (which is big fat JS object)
    in functional component you can have more than one state (by calling useState many times). each and every state is different from each other and there is no link between them
-3. update state method has two version:
-	a. it takes the value of some type as that of state 
+3. update state method has two version in case of useState:
+	a. it takes the value of same type as that of state 
 	b. it takes a callback which must return the value of same type as that of the state
 Note: the type of state is decided based on what type of initial value you have passed to useState function/hook
 4. in case of state updation, class component's setState() method merges the old and udated state

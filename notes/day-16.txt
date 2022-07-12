@@ -1,0 +1,92 @@
+function DataComp(){
+const [dataState,setDataState] = useState(0)   --> 0 --> 1-->2-->3....
+
+
+const increase =()=>{
+	setDataState(
+		(oldval)=> {return oldval+1}
+	)
+}
+
+
+const design = (
+	<div>
+		<span>{dataState}</span>
+		<button onClick={increase}>Increase</button>
+	</div>
+)
+
+return design
+}
+
+class DataComp extends Component{
+	constructor(){
+		super()
+		this.state={
+			x:0
+		}
+	}
+	increase =()=>{
+		this.setState(
+			(oldState)=> {return oldState.x+1}
+		)
+	}
+	render(){
+		const design = (
+		<div>
+			<span>{dataState}</span>
+			<button onClick={increase}>Increase</button>
+		</div>
+	)
+
+	return design
+	}
+}
+
+class Post ext.....{
+	state={
+		post:{
+			img:'', 
+			tags:[], 	
+			date:, 
+			comments:[]
+		}
+	}
+}
+
+component:
+data		UI
+----------------------------
+x		span
+
+PWA: Progressive Web Application
+	a. facility of caching (data caching/
+	b. push notificaion
+	etc.
+
+react routing:
+----------------------------------------
+React JS library has no support for routing
+Third party library/package: react-router-dom
+installaion: > npm i react-router-dom/npm i react-router-dom@6
+
+URL: http://localhost:3000/products/1 (1)-->route data
+path (route pattern)		URL				component
+---------------------------------------------------------------------------
+/		http://localhost:3000/				Home
+/home		http://localhost:3000/home			Home
+posts		http://localhost:3000/posts			PostList-->PostTable-->PostRow
+posts/:id	http://localhost:3000/posts/1			PostDetail
+anythingelse	http://localhost:3000/abc etc.			PageNotFound
+
+a. create the routes for the application (path, component)
+b. register these routes with router engine of react-router-dom
+
+router engine reads the path or writes the path in the browser
+it also loads the corresponding component in the index.html 
+
+Router Engine: BrowerRouter (use this), HashRouter and MemoryRouter (React Native)
+
+
+
+
