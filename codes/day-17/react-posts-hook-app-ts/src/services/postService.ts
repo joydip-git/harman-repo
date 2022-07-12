@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-const postUrl = 'https://jsonplaceholder.typicode.com/posts'
+const postUrl = 'https://jsonplaceholder.typicode.com/postss'
 
 export function getAllPosts(): Promise<AxiosResponse> {
     return axios.get(postUrl)

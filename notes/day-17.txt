@@ -7,3 +7,56 @@
 	b. routing packages: >npm i react-router-dom @types/react-router-dom
 	c. property definition: Do not need prop-types package, since TS helps you to define data types etc.
 5. react testing
+
+error handling:
+	components can throw error
+	when components throw error, that time component is unmounted from the DOM
+
+a. use try...catch in component
+b. use error boundary concept. in this create a class component with two lifecycle methods (componentDidCatch=> for logging error and getDerivedStateFromError=>for setting the state) and a state to store error information. use the error prone component as children of this class component. if the children throws error, this class component, used as a boundary wall, will catch the error and display the fallback design.
+
+P=> data type defining property object
+S=> data type defining state object
+class X extends Component<P,S>{}
+
+type propType={
+	children?:ReactNode[]|ReactNode,
+	value:number,
+	name:string,
+	values?:number[]
+}
+
+type stateType={
+	x:number,
+	str:string,
+	obj:{ name:string, salary:number}
+}
+
+class Sample extends Component<propType,stateType>{
+	state:ReadOnly<stateType>={
+		x:0,
+		str:'',
+		obj:{ name:'', salary:0}
+	};
+	render(){
+		return (this.props.children===undefined?<span>NA</span>:this.props.children)
+		//return <p>{this.props.value}</p>
+		//return <p>{this.props.name}</p>
+		//return <p>welcome</p>
+	}
+}
+no children in the following case:
+<Sample value={10} name={'anil'}/>
+
+children in the following case:
+<Sample value={10} name={'anil'}>
+	<p>this is a children1</p>
+	<div>this is a children2</div>
+	<span>this is a children3</span>
+</Sample>
+
+
+
+
+
+
