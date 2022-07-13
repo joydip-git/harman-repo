@@ -42,19 +42,6 @@ AppRoutes
 1. key property of React element: 
 should be mandatorily used in case of list of react elements being generated through map function. it will help React to differentiate between the previous series of React Elements and the new series of react elements generated due to the change in source of data very quickly. without that, react app's performance will decrease, in case of huge amount of data. key property should be given a value whicb is unique and does not change over time.
 
-
-running aplication:
-a. development mode
-b. production mode
-
-testing in react:
-a. unit testing the components => rendering component trees
-b. end to end testing of your react app => running your complete app
-
-facts:
-
-tools:
-
 2. reusability in React:
 in several components, you might want to use similar functionality. Can we create that common functionality at a common place and inject that functionality in the components which require it?
 
@@ -74,6 +61,25 @@ React JS: useState, useEffect, useRef, useContext, ueReducer, useMemo, etc.....
 Routing: useParams, useLocation, useNavigate, etc....
 Redux: useSelector, useDispatch, etc....
 
+running aplication:
+a. development mode
+b. production mode
+
+testing in react:
+a. unit testing the components => rendering component trees
+jest, react testing library
+headless browser
+
+b. end to end testing of your react app => running your complete app
+cypress, playwright
+
+facts:
+	iteration speed
+	how much to mock
+
+tools:
+	Jest: test runner, helps you access the DOM via "jsdom"
+	react testing library
 
 development code: (npm start)
 	a. transpilation of the source code
