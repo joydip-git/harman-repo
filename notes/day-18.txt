@@ -39,12 +39,26 @@ AppRoutes
 <Route path='/home' element={<Home/>}/>
 
 
-1. key property of React element: should be mandatorily used in case of list of react elements being generated through map function. it will help React to differentiate between the previous series of React Elements and the new series of react elements generated due to the change in source of data very quickly. without that, react app's performance will decrease, in case of huge amount of data. key property should be given a value whicb is unique and does not change over time.
+1. key property of React element: 
+should be mandatorily used in case of list of react elements being generated through map function. it will help React to differentiate between the previous series of React Elements and the new series of react elements generated due to the change in source of data very quickly. without that, react app's performance will decrease, in case of huge amount of data. key property should be given a value whicb is unique and does not change over time.
 
-2. HOC: higher order component
+
+running aplication:
+a. development mode
+b. production mode
+
+testing in react:
+a. unit testing the components => rendering component trees
+b. end to end testing of your react app => running your complete app
+
+facts:
+
+tools:
+
+2. reusability in React:
 in several components, you might want to use similar functionality. Can we create that common functionality at a common place and inject that functionality in the components which require it?
 
-answer: A. use HOC concept
+answer: A. use HOC [Higher order component] concept
 HOC: design pattern (no API in React), technique to provide common functionalities in different components
 
 a. create a function, where you can pass your component as an argument
@@ -53,3 +67,25 @@ c. the function will return an upgraded (enhanced) component (the original compo
 Note: when you pass any value through some props to the original component, it is actuallt received by the component in the HOC. hence those props need to passed back to the original component.
 
 answer: B. use custom hooks (use hooks concept)
+
+
+hooks:
+React JS: useState, useEffect, useRef, useContext, ueReducer, useMemo, etc.....
+Routing: useParams, useLocation, useNavigate, etc....
+Redux: useSelector, useDispatch, etc....
+
+
+development code: (npm start)
+	a. transpilation of the source code
+	b. packaging/bundling of the source code into a single or several files
+	c. inclusion of CSS styles etc. into a single or several files
+	d. react runtime library 
+	e. scrambling
+	the package size will be more
+
+production code: (npm run build)
+	a. transpilation of the source code
+	b. packaging/bundling of the source code into a single or several files
+	c. inclusion of CSS styles etc. into a single or several files
+	d. react runtime library 
+	the package size will be les, because the entire code is minified
