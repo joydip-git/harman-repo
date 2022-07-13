@@ -39,4 +39,17 @@ AppRoutes
 <Route path='/home' element={<Home/>}/>
 
 
-1. key property of React element
+1. key property of React element: should be mandatorily used in case of list of react elements being generated through map function. it will help React to differentiate between the previous series of React Elements and the new series of react elements generated due to the change in source of data very quickly. without that, react app's performance will decrease, in case of huge amount of data. key property should be given a value whicb is unique and does not change over time.
+
+2. HOC: higher order component
+in several components, you might want to use similar functionality. Can we create that common functionality at a common place and inject that functionality in the components which require it?
+
+answer: A. use HOC concept
+HOC: design pattern (no API in React), technique to provide common functionalities in different components
+
+a. create a function, where you can pass your component as an argument
+b. that function will inject/add the common functionalities in the given/passed component
+c. the function will return an upgraded (enhanced) component (the original component is not actually returned. rather it becomes nested inside another component and that another component is returned from HOC)
+Note: when you pass any value through some props to the original component, it is actuallt received by the component in the HOC. hence those props need to passed back to the original component.
+
+answer: B. use custom hooks (use hooks concept)
