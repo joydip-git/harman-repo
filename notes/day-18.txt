@@ -1,0 +1,42 @@
+BrowserRouter: latest browsers
+HTML5: pushState API location, match, history etc.
+
+<Route path='/products/:x/:y'
+
+http://..../abc.com/products/10/20
+
+match=>params=>{ x:10, y:20}
+
+useParams()
+
+HashRouter: older browsers
+# in the routes is used to store navigation information
+
+MemoryRouter: React Native
+Routes are stored in runtime-memory. this router engine reads routes from or writes routes into memory
+
+import {BrowserRouter as Pavan} from 'react-router-dom'
+
+index:
+<Pavan>
+    <App/>
+</Pavan>
+
+a. register our routes
+b. read routing information
+c. extract route data
+d. redirect you to different route
+
+App
+let design =<div><DahsBoard/><AppRoutes/></div>
+
+DashBoard:
+<Link to='/home'>
+	<button>Home</button>
+</Link>
+
+AppRoutes
+<Route path='/home' element={<Home/>}/>
+
+
+1. key property of React element

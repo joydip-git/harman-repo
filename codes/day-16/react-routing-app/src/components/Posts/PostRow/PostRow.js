@@ -2,16 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const PostRow = ({ post }) => {
+const PostRow = (props) => {
+    console.log(`[PR] rendered`)
     return (
         <tr>
             <td>
-                <Link to={`/posts/${post.id}`}>
-                    {post.id}
+                <Link to={`/posts/${props.post.id}`}>
+                    {props.post.id}
                 </Link>
             </td>
             <td>
-                {post.title}
+                {props.post.title}
             </td>
         </tr>
     )

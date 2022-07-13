@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import PostRow from '../PostRow/PostRow'
 
 const PostTable = ({ allPosts }) => {
+    console.log('[PT] rendered')
     const postsDesign = (
         <div className='tbl-responsive'>
             <table className='table'>
@@ -15,7 +16,7 @@ const PostTable = ({ allPosts }) => {
                 <tbody>
                     {
                         allPosts.map(
-                            (p) => <PostRow post={p} />
+                            (p) => <PostRow post={p} key={p.id} />
                         )
                     }
                 </tbody>
