@@ -1,0 +1,21 @@
+{
+  "name": "sample-e2e-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "lite-server",
+    "test": "playwright test",
+    "report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.23.3",
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "playwright": "^1.23.3"
+  }
+}

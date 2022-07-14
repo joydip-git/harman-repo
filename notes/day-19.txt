@@ -1,0 +1,19 @@
+testing:
+	component (unit) testing: jest and react-dom and react-dom/test-utils [testing-library=>jestdom, enzyme]
+	application (end to end) testing: playwright [cypress]
+
+jest
+
+playwright:
+	a. use the actual browsers installed in your system
+	b. use the implementation of the actual browser provided by playwright
+	
+
+	a. you can run the app in dev mode, which playwright can test
+	b. you can tell playwright to run the app and then test the app
+
+install and configure:>npm init playwright@latest
+a. create tests folder to save all test files
+b. create a configuration for running playwright [playwright.config.js]
+c. install @playwright/tests in your application
+d. install playwright npm i playwright (for its own implementation of the browsers)
