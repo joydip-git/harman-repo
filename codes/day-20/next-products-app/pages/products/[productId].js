@@ -1,17 +1,17 @@
 //dynamic page (which displays data using the same template dynamically based on dynamic route parameter)
 import { getProductById, getProducts } from '../../services/productService'
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const ProductDetail = (props) => {
+    const { error, product, loading } = props
 
-    const { error, product } = props
-    console.log('pre-rendering page for product#' + product.productId)
+    const router = useRouter()
+    if (router.isFallback) {
+        return <span>Loding...please wait</span>
+    }
 
-    //const router = useRouter()
-    // if (router.isFallback) {
-    //     return <span>Loding...please wait</span>
-    // }
-
+    if (loading)
+        return "loading"
     if (error !== '')
         return <span>{error}</span>
     if (!product)
@@ -25,33 +25,22 @@ const ProductDetail = (props) => {
 
 
 export async function getStaticPaths() {
-    // const resp = await getProducts()
-    // const data = await resp.json()
-    // const allParams = data.map(
-    //     p => {
-    //         return {
-    //             params:
-    //             {
-    //                 productId: p.productId.toString()
-    //             }
-    //         }
-    //     }
-    // )
-
-    // return {
-    //     paths: allParams.slice(0, 3),
-    //     fallback: true
-    // }
+    const resp = await getProducts()
+    const data = await resp.json()
+    const allParams = data.map(
+        p => {
+            return {
+                params:
+                {
+                    productId: p.productId.toString()
+                }
+            }
+        }
+    )
 
     return {
-        paths: [{
-            params: { productId: '1' }
-        }, {
-            params: { productId: '2' }
-        }, {
-            params: { productId: '3' }
-        }],
-        fallback: false
+        paths: allParams.slice(0, 3),
+        fallback: true
     }
 }
 
@@ -65,14 +54,16 @@ export async function getStaticProps(context) {
         return {
             props: {
                 product: data,
-                error: ''
+                error: '',
+                loading: false
             }
         }
     } catch (error) {
         return {
             props: {
                 product: null,
-                error: error.message
+                error: error.message,
+                loading: false
             }
         }
     }
