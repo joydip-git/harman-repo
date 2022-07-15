@@ -1,0 +1,80 @@
+web app:
+coding and designing
+assets and others
+	a. packages
+	b. configuration
+	c. scripts
+	d. dev mode web server (lite-server)
+	e. testing
+	d. production code - minfication, code splitting, other performance criterias...
+	[bundler: webpack, browserify etc.]
+
+create-react-app:
+	a. client-side rendering
+	b. client-side data fetching
+
+issues:
+	bigger package size. will lead to slow initial load
+	slow network: will take more time for initial load
+	huge amount of data: fetching at the client side will be time consuming
+	.....................
+
+Next JS: 
+	React JS framework
+		routing (page-based routing)
+		pre-rendering
+			static site rendering
+			server side rendering
+		RESTful API routing facilities
+		authentication
+		styles, SASS etc...
+		production ready code
+
+create nextjs app:
+1. 
+a. install create-next-app in your system: >npm i create-next-app -g
+b. create next app: >create-next-app app-name
+
+2. no need to install the tool locally. use package runner. 
+>npx create-next-app app-nam
+
+create-next-app tool helps you create nextjs framework based react application
+for installation of packages it uses package manager: "yarn" 
+other package managers: NPM, bower etc.
+
+scripts:
+  "dev":   "next dev",    => run the appliaction dev mode
+  "build": "next build",  => to produce production code
+  "start": "next start",  => to host the production code in a production server (to run the app in prod mode)
+
+components:
+	pages     	[routing based components]
+	components	[nested components]
+
+1. routing: page -based routing
+	1. the base route is index.js page in "pages" directory
+	2. if you create a sub-directory (Say, products) inside pages, a new nested route will be create: /products
+           that sub-directory must have an index.js file, which will be served by default when you navigate to the route
+	3. In case you have a file with the same name as that of the sub-directory (products.js), then instead of the index.js in the products directory, the products.js in the page directory will be served.
+	i.e. Nextjs engine always looks for a page with the same name as that of the route. if that is not found, and if there is a sub-directory by the same name, then the index.js file of that directiry will be served.
+
+2. rendering and data fetching: 
+a. pre-rendering at build time.
+	nextjs does pre-rendering of pages by default. this improves the performance. on the request it just serves the pre-rendered page. this page is created during the build time. (dev build/prod build).
+	Note: in this case of pre-rendered page, the page will be served very fast with default design, but if you have client-side data fetching on this pre-rendered page, the data might take sometime to get loaded on the page
+
+	i. static site generation (SSG): pre-rendering a static page during build time from the corresponding page component. if that page needs data, that will be fetched during build time and then the page will be generated with that data. when requested from browser, this pre-generated HTML (for the same component) will be served.
+	- getStaticProps => helps you to pre-fetch data and then generate a static page duing build time
+
+
+100 => 50ms
+10000=> 5000ms (5s)
+10000000
+
+	ii. server-side rendering (SSR): no page will be generated statically. all of them will be generated based on request
+	/products 
+
+b. data fetching at the time of pre-rendering (server side data fetching)=> pre-fetching of data
+	
+
+

@@ -1,0 +1,42 @@
+import { useState, useEffect } from "react"
+import ProductTable from "../../components/ProductTable"
+import { getProducts } from "../../services/productService"
+
+const ProductList = () => {
+    const [allProducts, setAllProducts] = useState([])
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
+
+    const fetchProducts = async () => {
+        try {
+            const resp = await getProducts()
+            const data = await resp.json()
+            setAllProducts(data)
+            setError('')
+            setLoading(false)
+        } catch (e) {
+            setAllProducts([])
+            setError(e.message)
+            setLoading(false)
+        }
+    }
+    useEffect(
+        () => {
+            fetchProducts()
+        }, [])
+
+    if (loading)
+        return "loading"
+    if (error !== '')
+        return <span>{error}</span>
+    if (allProducts.length === 0)
+        return "no products found"
+
+    return (
+        <div>
+            <ProductTable productRecords={allProducts} />
+        </div>
+    )
+}
+
+export default ProductList

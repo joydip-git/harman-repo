@@ -1,0 +1,45 @@
+//dynamic page (which displays data using the same template dynamically based on dynamic route parameter)
+import { useRouter } from 'next/router'
+import { getProductById } from '../../services/productService'
+import { useState, useEffect } from 'react'
+
+const ProductDetail = () => {
+    const router = useRouter()
+    //console.log(router.query)
+    const productId = Number(router.query.productId)
+
+    const [product, setProduct] = useState(null)
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
+
+    const fetchProduct = async () => {
+        try {
+            const resp = await getProductById(productId)
+            const data = await resp.json()
+            setProduct(data)
+            setError('')
+            setLoading(false)
+        } catch (e) {
+            setProduct(null)
+            setError(e.message)
+            setLoading(false)
+        }
+    }
+    useEffect(
+        () => {
+            fetchProduct()
+        }, [productId])
+
+    if (loading)
+        return "loading"
+    if (error !== '')
+        return <span>{error}</span>
+    if (!product)
+        return "no product found"
+
+    return (
+        <span>{product.productName}</span>
+    )
+}
+
+export default ProductDetail

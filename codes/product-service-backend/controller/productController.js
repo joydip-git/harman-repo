@@ -2,6 +2,7 @@ const productBo = require('../bo/productBo');
 const statusMessage = require('../statusMessage');
 
 function fetchProducts(req, res) {
+    console.log('request came')
     let data = productBo.getProducts();
 
     if (data.length > 0)
@@ -13,7 +14,7 @@ function fetchProducts(req, res) {
 function fetchProduct(req, res) {
     let pid = parseInt(req.params.id);
     let found = productBo.getProductById(pid);
-
+    console.log('request came for' + pid)
     if (found)
         res.end(JSON.stringify(found));
     else
